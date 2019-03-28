@@ -1,0 +1,38 @@
+{
+  "dependencies": {
+    "react": "16.8.5",
+    "react-dom": "16.8.5"
+  },
+  "name": "react",
+  "description": "The goal of this project is to use ReactJS capabilities and its paradigms by creating a TODO app. This app should be able to add TODOs and track the number of total TODOs as well as the number of unchecked TODOs.",
+  "version": "1.0.0",
+  "main": "script.js",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "html-webpack-plugin": "^3.2.0",
+    "http-server": "^0.11.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mczabaj/react-todo.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "mczabaj",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mczabaj/react-todo/issues"
+  },
+  "homepage": "https://github.com/mczabaj/react-todo#readme"
+}
