@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
 
+// TODO: convert to stateless functional component
 class ToDo extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     return (
       <li className='todo-container row' key={this.props.todo.id}>

@@ -2,10 +2,6 @@ import React, { Component } from 'react'
 import ToDo from './todo'
 
 class ToDos extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     return (
       <div>
@@ -13,7 +9,7 @@ class ToDos extends Component {
 
         <ul id="todo-list" className="todo-list">
           { this.props.todos.length === 0 && <p>Nothing To Do Today!</p> }
-          { this.props.todos.map(todo => <ToDo key={todo.id}
+          { (this.props.todos || []).map(todo => <ToDo key={todo.id}
                                                todo={todo}
                                                onTodoDelete={this.props.onTodoDelete}
                                                onTodoUpdate={this.props.onTodoUpdate} />) }

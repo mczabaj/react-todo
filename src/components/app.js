@@ -9,7 +9,7 @@ class App extends Component {
     this.state = {
       itemCount: 0,
       uncheckedCount: 0,
-      todos: [{id: 1, desc: "blah", checked: false}]
+      todos: [{id: 1, desc: "blah", checked: false},{id: 2, desc: "done", checked: true}]
     }
 
     this.handleTodoAdd = this.handleTodoAdd.bind(this)
@@ -18,13 +18,17 @@ class App extends Component {
   }
 
   handleTodoAdd() {
-    const id = this.state.todos.length === 0 ? 0 : (this.state.todos.pop().id + 1)
-    const todos = this.state.todos.push({ id: id, desc: null, checked: false })
+    console.log ("add event fired")
+    const id = new Date().getMilliseconds()
+    const todo = { id: id,
+                   desc: null,
+                   checked: false }
+    const todos = this.state.todos.push(todo)
     this.setState({ todos })
   }
 
   handleTodoDelete(todoId) {
-    const todos = this.state.todos.filter(t => t.id !== todoId)
+    const todos = (this.state.todos || []).filter(t => t.id !== todoId)
     this.setState({ todos })
   }
 
@@ -36,10 +40,12 @@ class App extends Component {
   }
 
   render() {
+    console.log ("render")
+
     return (
       <main className="container center">
         <Title itemCount={this.state.todos.length}
-               uncheckedCount={this.state.todos.filter(t => t.checked === false).length} />
+               uncheckedCount={(this.state.todos || []).filter(t => t.checked === false).length} />
         <ToDos todos={this.state.todos}
                onTodoAdd={this.handleTodoAdd}
                onTodoDelete={this.handleTodoDelete}
