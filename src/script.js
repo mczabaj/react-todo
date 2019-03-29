@@ -20,24 +20,3 @@ render(<App />, rootEl)
 if (module.hot) {
     module.hot.accept();
 }
-
-function newTodo() {
-  alert('New TODO button clicked!')
-  render(<ToDo />, list)
-}
-
-function doneTodo() {
-  // Mark tod0 as done by:
-  // 1) changing checkbox to check
-  // 2) updating "done" total
-  // 3) changing class and CSS for item (like gray it out)
-}
-
-function undoTodo() {
-  // Opposite of doneTodo
-}
-
-function deleteTodo() {
-  // remove this todo from the list
-  // update totals accordingly
-}

@@ -4,22 +4,21 @@ import ToDo from './todo'
 class ToDos extends Component {
   constructor(props) {
     super(props)
-
-    this.state = {
-      todos: this.props.todos
-    }
   }
 
   render() {
-    console.log('props ', this.props)
-
     return (
-      <ul id="todo-list" className="todo-list">
-        { this.state.todos.length === 0 && <p>Nothing To Do Today!</p> }
-        { this.state.todos.map(todo => <ToDo key={todo.id} id={todo.id}
-                                             desc={todo.desc}
-                                             checked={todo.checked} />) }
-      </ul>
+      <div>
+        <button className="btn btn-primary" onClick={this.props.onTodoAdd}>New ToDo</button>
+
+        <ul id="todo-list" className="todo-list">
+          { this.props.todos.length === 0 && <p>Nothing To Do Today!</p> }
+          { this.props.todos.map(todo => <ToDo key={todo.id}
+                                               todo={todo}
+                                               onTodoDelete={this.props.onTodoDelete}
+                                               onTodoUpdate={this.props.onTodoUpdate} />) }
+        </ul>
+      </div>
     )
   }
 }
