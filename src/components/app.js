@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ToDo from './todo'
+import ToDos from './todos'
 
 class App extends Component {
   constructor() {
@@ -8,8 +8,14 @@ class App extends Component {
     this.state = {
       itemCount: 0,
       uncheckedCount: 0,
-      todos: [{id: 1, desc: 'todo 1'},{id: 2, desc: 'todo 2'}]
+      todos: [{id: 1, desc: 'todo 1', checked: false},{id: 2, desc: 'todo 2', checked: true}]
     }
+
+    this.handleAddTodo = this.handleAddTodo.bind(this)
+  }
+
+  handleAddTodo(todo) {
+    this.setState({ itemCount: this.state.itemCount + 1})
   }
 
   render() {
@@ -20,11 +26,8 @@ class App extends Component {
           <h1 className="col-sm center title">My ToDo App</h1>
           <span className="controls col-sm">Unchecked count: <span id="unchecked-count" className="badge badge-secondary">{this.formatUncheckedCount()}</span></span>
         </span>
-        <button className="btn btn-primary" onClick={this.newTodo}>New ToDo</button>
-        <ul id="todo-list" className="todo-list">
-          { this.state.todos.length === 0 && <p>Nothing To Do Today!</p> }
-          { this.state.todos.map(todo => <li key={todo.id}>{todo.desc}</li>) }
-        </ul>
+        <button className="btn btn-primary" onClick={() => this.handleAddTodo(todo)}>New ToDo</button>
+        <ToDos todos={this.state.todos} />
       </div>
     )
   }
@@ -37,10 +40,6 @@ class App extends Component {
   formatUncheckedCount() {
     const uncheckedCount = this.state.uncheckedCount
     return uncheckedCount === 0 ? 'Zero' : uncheckedCount
-  }
-
-  newTodo() {
-    alert("Add a new to do")
   }
 }
 
