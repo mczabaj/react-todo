@@ -14,16 +14,12 @@ ul {
   list-style-type: none;
 }
 
-.center {
-  align-self: center;
-}
-
 .flow-right {
   display: flex;
   justify-content: space-around;
 }
 
-.container {
+/* .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 10px;
@@ -31,14 +27,15 @@ ul {
   flex-direction: column;
   background-color: white;
   height: 100vh;
-}
+} */
 
-.title, .controls, .button {
+.title, .controls {
   flex: none;
 }
 
 .button {
   padding: 10px 20px;
+  width: 200px;
 }
 
 .todo-list {

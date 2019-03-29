@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
-class ToDo extends React.Component {
+class ToDo extends Component {
   render() {
-    return <div>Todo Item</div>;
+    return <li>Todo Item</li>
   }
 }
 

@@ -1,3 +1,13 @@
+import React from 'react'
+import { render } from 'react-dom'
+import App from './components/app'
+import 'bootstrap/dist/css/bootstrap.css'
+
+const rootEl = document.getElementById('app');
+const list = document.getElementById('todo-list')
+const itemCountSpan = document.getElementById('item-count')
+const uncheckedCountSpan = document.getElementById('unchecked-count')
+
 const classNames = {
   TODO_ITEM: 'todo-container',
   TODO_CHECKBOX: 'todo-checkbox',
@@ -5,15 +15,15 @@ const classNames = {
   TODO_DELETE: 'todo-delete',
 }
 
-const list = document.getElementById('todo-list')
-const itemCountSpan = document.getElementById('item-count')
-const uncheckedCountSpan = document.getElementById('unchecked-count')
+render(<App />, rootEl)
+
+if (module.hot) {
+    module.hot.accept();
+}
 
 function newTodo() {
   alert('New TODO button clicked!')
-  // turn this into a form to provide the Todo text.
-  // then turn it into a todo element in the list.
-  // update the total todo count
+  render(<ToDo />, list)
 }
 
 function doneTodo() {

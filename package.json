@@ -1,7 +1,11 @@
 {
   "dependencies": {
+    "babel-cli": "^6.26.0",
+    "bootstrap": "^4.3.1",
+    "css-loader": "^2.1.1",
     "react": "16.8.5",
-    "react-dom": "16.8.5"
+    "react-dom": "16.8.5",
+    "style-loader": "^0.23.1"
   },
   "name": "react",
   "description": "The goal of this project is to use ReactJS capabilities and its paradigms by creating a TODO app. This app should be able to add TODOs and track the number of total TODOs as well as the number of unchecked TODOs.",
@@ -10,9 +14,10 @@
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-core": "^6.26.3",
-    "babel-loader": "^8.0.5",
+    "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "html-webpack-plugin": "^3.2.0",
     "http-server": "^0.11.1",
     "webpack": "^4.29.6",
@@ -20,7 +25,10 @@
     "webpack-dev-server": "^3.2.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node_modules/.bin/webpack-dev-server --mode development --open --hot",
+    "build": "node_modules/.bin/webpack --config webpack.config.js --mode production",
+    "serve": "node_modules/.bin/http-server ./dist"
   },
   "repository": {
     "type": "git",
